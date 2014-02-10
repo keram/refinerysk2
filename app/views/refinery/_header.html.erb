@@ -1,0 +1,12 @@
+<div id="top">
+  <a id="skip-to-main" href="#main" class="visuallyhidden"><%= t('.skip_to_main') %></a>
+  <%= render '/refinery/locale_picker' if Refinery::I18n.frontend_locales.many? %>
+</div>
+
+<h1 id="logo">
+  <%= link_to refinery.root_path do %>
+    <span class="site">refinery</span><span class="domain">.sk</span>
+  <% end -%>
+</h1>
+
+<%= Refinery::MenuPresenter.new(refinery_menu_pages, self).to_html %>

@@ -1,0 +1,27 @@
+<meta charset="<%= Rails.application.config.encoding %>" />
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+<title><%= browser_title(yield(:browser_title)) %></title>
+<%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? %>
+<%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? %>
+<%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend %>
+<%= yield :meta %>
+
+<%= stylesheet_link_tag 'application' %>
+<% ::Refinery::Core.stylesheets.each do |css| %>
+  <%= stylesheet_link_tag css.path, css.options %>
+<% end %>
+<%= stylesheet_link_tag 'refinery/site_bar' if refinery_user? %>
+<%= yield :stylesheets %>
+
+<%= javascript_include_tag 'modernizr-min', 'vendor/i18n', data: { :'turbolinks-eval' => false } %>
+<% refinery_i18n_js = ::Refinery::Core.I18n_javascripts[Globalize.locale] ||
+            ::Refinery::Core.I18n_javascripts[Refinery::I18n.default_frontend_locale] %>
+<%= javascript_include_tag *refinery_i18n_js unless refinery_i18n_js.nil? %>
+
+<% Refinery::Core.extern_javascripts.each do |js| %>
+  <%= javascript_include_tag js[:url],
+              defer: js[:defer],
+              async: js[:async] %>
+<% end -%>
+
+<%= render '/refinery/javascripts' if Refinery::Core.turbolinks_on_frontend %>
