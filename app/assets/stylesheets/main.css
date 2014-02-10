@@ -275,6 +275,10 @@ footer {
     }
 }
 
+#share-this-blog_post {
+    margin-bottom: 1em;
+}
+
 .records {
     list-style: none;
     margin: 0px;
