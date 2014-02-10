@@ -14,6 +14,7 @@ Refinery::Core.configure do |config|
   # file system for storing resources and images
   # config.dragonfly_custom_backend_class = nil
   # config.dragonfly_custom_backend_opts = {}
+  config.dragonfly_protect_from_dos_attacks = true
 
   # Whenever Refinery caches anything and can set a cache key, it will add
   # a prefix to the cache key containing the string you set here.
@@ -23,12 +24,12 @@ Refinery::Core.configure do |config|
   config.site_name = 'refinery.sk'
 
   # Site email from which are send emails
-  # config.site_notifications_email = "no-reply@localhost"
+  config.site_notifications_email = "no-reply@refinery.sk"
 
   # This activates Google Analytics tracking within your website. If this
   # config is left blank or set to UA-xxxxxx-x then no remote calls to
   # Google Analytics are made.
-  # config.google_analytics_page_code = "UA-xxxxxx-x"
+  config.google_analytics_page_code = "UA-30910392-1"
 
   # Enable/disable authenticity token on frontend
   # config.authenticity_token_on_frontend = false
