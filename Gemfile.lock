@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: git://github.com/keram-refinery/refinerycms-epiceditor.git
-  revision: ee0adabe4a75eb163603a1e25f0dec607eb14f21
+  revision: afe36ee7ad3873e56c1765f929401e107459a71c
   branch: master
   specs:
     refinerycms-epiceditor (0.0.1)
@@ -290,10 +290,10 @@ GEM
       rack
     erubis (2.7.0)
     execjs (2.0.2)
-    factory_girl (4.3.0)
+    factory_girl (4.4.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.3.0)
-      factory_girl (~> 4.3.0)
+    factory_girl_rails (4.4.0)
+      factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
@@ -310,7 +310,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
-    minitest (5.2.2)
+    minitest (5.2.3)
     multi_json (1.8.4)
     mysql2 (0.3.15)
     net-scp (1.1.2)
